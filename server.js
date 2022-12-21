@@ -1,16 +1,22 @@
+// Load dependecies
 import express from "express";
 import dotenv from "dotenv";
 
-// Environment variables
+// Load routers
+import nnRouter from "./routes/NeuralNetworkRoutes.js";
+
+// Load environment variables
 dotenv.config();
 
-// Initialize
+// App initializations
 const app = express();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5000;
 
-// Routes
-app.get("/", (req, res) => res.send("Hello, world!"));
-app.post("/data", (req, res) => res.send("Taken."));
+// Middleware
+app.use(express.json());
+
+// Mount routers
+app.use("/api/v1/nn", nnRouter);
 
 // Entry
 app.listen(PORT, () => console.log(`Running in ${process.env.NODE_ENV} on port: ${PORT}`));
