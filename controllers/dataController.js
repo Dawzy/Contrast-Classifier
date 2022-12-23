@@ -1,10 +1,10 @@
 
 /*
 	@desc Runs rgb values as a testing data point.
-	@route GET /api/v1/nn/test
-	@access Public
+	@route GET /api/v1/data
+	@access Private
 */
-const testNetwork = (req, res) => {
+const getDataPoints = (req, res) => {
 	res.json({"Simulated Response": "Hello, world!"});
 
 	// Extract background color rgb data
@@ -17,10 +17,10 @@ const testNetwork = (req, res) => {
 
 /*
 	@desc Runs rgb values as a training data point.
-	@route POST /api/v1/nn/train
-	@access Public
+	@route POST /api/v1/data
+	@access Private
 */
-const trainNetwork = (req, res) => {
+const addDataPoint = (req, res) => {
 	res.json({"Success": "Trained"});
 
 	// Extract background color rgb data
@@ -31,4 +31,4 @@ const trainNetwork = (req, res) => {
 	// Return result
 }
 
-export { testNetwork, trainNetwork };
+export { getDataPoints, addDataPoint };

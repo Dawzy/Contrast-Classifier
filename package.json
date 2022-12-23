@@ -5,14 +5,19 @@
   "main": "server.js",
   "scripts": {
     "start": "NODE_ENV=production node server.js",
-	"dev": "nodemon server"
+    "dev": "nodemon server"
   },
   "keywords": [],
   "author": "David Fawzy",
   "license": "MIT",
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "dotenv": "^16.0.3",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^6.8.1",
+    "morgan": "^1.10.0",
+    "validator": "^13.7.0"
   },
   "type": "module",
   "devDependencies": {
